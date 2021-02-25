@@ -1,2 +1,7 @@
-<button type="submit" ng-click="demoController.get()">Get</button>
-<pre>http response data: {{demoController.response}}</pre>
+<div>
+    <a ng-href="/#!/">Home</a>
+    <br />
+    <button type="button" class="btn btn-default" ng-click="demoController.get()"
+        tooltip-placement="bottom" uib-tooltip="{{demoController.tooltip}}">{{demoController.buttonMessage}}</button>
+    <pre ng-if="demoController.response != undefined">http response data: {{demoController.response}}</pre>
+</div>
