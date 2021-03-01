@@ -11,5 +11,10 @@ demoApp.config(function ($routeProvider) {
             templateUrl: 'views/demo.html',
             controller: 'demoCtrl',
             controllerAs: 'demoController'
+        })
+        .when('/ngTable', {
+            templateUrl: 'views/ngTable-demo.html',
+            controller: 'ngTableDemoCtrl',
+            controllerAs: 'ngTableDemoController'
         });
 });
