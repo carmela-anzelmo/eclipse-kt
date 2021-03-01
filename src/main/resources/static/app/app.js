@@ -1,6 +1,6 @@
 'use strict';
 
-var demoApp = angular.module('demoApp', ['ngRoute', 'ui.bootstrap']);
+var demoApp = angular.module('demoApp', ['ngRoute', 'ui.bootstrap', 'ngTable']);
 
 demoApp.config(function ($routeProvider) {
     $routeProvider
