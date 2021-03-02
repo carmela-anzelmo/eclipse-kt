@@ -7,7 +7,7 @@ public class PersonDto implements Serializable {
 	private static final long serialVersionUID = -4646757836729553290L;
 	private String firstName;
 	private String lastName;
-	private int age;
+	private int id;
 
 	public String getFirstName() {
 		return firstName;
@@ -25,12 +25,12 @@ public class PersonDto implements Serializable {
 		this.lastName = lastName;
 	}
 
-	public int getAge() {
-		return age;
+	public int getId() {
+		return id;
 	}
 
-	public void setAge(int age) {
-		this.age = age;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 }
