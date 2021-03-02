@@ -1,24 +1,17 @@
 'use strict';
 
 angular.module("demoApp")
-    .controller('ngTableDemoCtrl', ['NgTableParams', 'NgTableDemoService', function (NgTableParams, NgTableDemoService) {
+    .controller('ngTableDemoCtrl', ['$filter', 'NgTableParams', 'NgTableDemoService', function ($filter, NgTableParams, NgTableDemoService) {
         var self = this;
 
         self.buttonMessage = "Get";
         self.tooltip = 'Call back-end';
 
-        self.get = function (params) {
-            return NgTableDemoService.getPerson(1).then(
-                function (response) {
-                    return self.response = response;
-                }
-            );
-        };
-
         self.getAll = function (params) {
             return NgTableDemoService.getAll().then(
                 function (response) {
-                    return self.response = response;
+                    response = $filter("filter")(response, params.filter());
+                    return $filter("orderBy")(response, params.orderBy());
                 }
             );
         };
