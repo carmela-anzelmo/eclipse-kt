@@ -7,7 +7,7 @@ demoApp.config(function ($routeProvider) {
         .when('/', {
             templateUrl: 'views/main.html'
         })
-        .when('/demo', {
+        .when('/form', {
             templateUrl: 'views/demo.html',
             controller: 'demoCtrl',
             controllerAs: 'demoController'

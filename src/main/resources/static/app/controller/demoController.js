@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module("demoApp")
-    .controller('demoCtrl', ['$http', 'DemoService', function ($http, DemoService) {
+    .controller('demoCtrl', ['$http', 'DemoService', 'NgTableDemoService', function ($http, DemoService, NgTableDemoService) {
         var self = this;
 
         self.buttonMessage = "Get";
@@ -14,4 +14,14 @@ angular.module("demoApp")
                 }
             );
         };
+
+        self.submit = function (checkboxModel) {
+            console.log("checkboxModel is", checkboxModel);
+            console.log(self.customersSelected);
+        };
+
+        NgTableDemoService.getAll().then(
+            function (response) {
+                self.customers = response;
+            });
     }]);

@@ -7,8 +7,31 @@
 </head>
 
 <body ng-app="demoApp">
-    <a href="/#!/">Home</a>
-    <div class="container-fluid" ng-view> </div>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" ng-click="isNavCollapsed = !isNavCollapsed">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Demo</a>
+            </div>
+            <div class="collapse navbar-collapse" uib-collapse="isNavCollapsed">
+                <ul class="nav navbar-nav">
+                    <li><a ng-href="/#!/form">Form</a></li>
+                    <li><a ng-href="/#!/ngTable">ng-table example</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 main" ng-view>
+            </div>
+        </div>
+    </div>
 
     <script type="text/javascript" src="/node_modules/angular/angular.min.js"></script>
     <script type="text/javascript" src="/node_modules/angular-route/angular-route.min.js"></script>

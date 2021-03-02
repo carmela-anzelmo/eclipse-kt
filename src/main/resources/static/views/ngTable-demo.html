@@ -1,15 +1,11 @@
-<div class="row">
-    <div class="col-lg-3">
-        <h2 class="page-header">ng-table example</h2>
-        <table ng-table="ngTableDemoController.tableParams" class="table" show-filter="true">
-            <tr ng-repeat="person in $data">
-                <td title="'First Name'" filter="{ firstName: 'text'}" sortable="'firstName'">
-                    {{person.firstName}}</td>
-                <td title="'Last Name'" filter="{ lastName: 'text'}" sortable="'lastName'">
-                    {{person.lastName}}</td>
-                <td title="'Id'" filter="{ id: 'number'}" sortable="'id'">
-                    {{person.id}}</td>
-            </tr>
-        </table>
-    </div>
-</div>
+<h2 class="page-header">ng-table example</h2>
+<table ng-table="ngTableDemoController.tableParams" class="table" show-filter="true">
+    <tr ng-repeat="person in $data">
+        <td title="'First Name'" filter="{ firstName: 'text'}" sortable="'firstName'">
+            {{person.firstName}}</td>
+        <td title="'Last Name'" filter="{ lastName: 'text'}" sortable="'lastName'">
+            {{person.lastName}}</td>
+        <td title="'Id'" filter="{ id: 'number'}" sortable="'id'">
+            {{person.id}}</td>
+    </tr>
+</table>

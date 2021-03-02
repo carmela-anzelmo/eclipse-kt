@@ -1,7 +1,27 @@
-<div>
-    <a ng-href="/#!/">Home</a>
-    <br />
-    <button type="button" class="btn btn-default" ng-click="demoController.get()"
-        tooltip-placement="bottom" uib-tooltip="{{demoController.tooltip}}">{{demoController.buttonMessage}}</button>
-    <pre ng-if="demoController.response != undefined">http response data: {{demoController.response}}</pre>
-</div>
+<button type="button" class="btn btn-default" ng-click="demoController.get()" tooltip-placement="bottom"
+    uib-tooltip="{{demoController.tooltip}}">{{demoController.buttonMessage}}</button>
+<pre ng-if="demoController.response != undefined">http response data: {{demoController.response}}</pre>
+<hr />
+
+<form name="myForm" novalidate>
+    <div class="form-group" ng-class="{ 'has-error': myForm.userId.$invalid }">
+        <label for="userId">User id</label>
+        <input type="number" class="form-control" id="userId" name="userId" placeholder="id"
+            ng-model="demoController.userId" ng-maxlength="3" required>
+    </div>
+    <span class="error" ng-show="myForm.userId.$error.required">Required!</span><br>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" ng-model="checkboxModel"> Check me out
+        </label>
+    </div>
+    <div class="form-group">
+        <label for="customers">Customers</label>
+        <select class="form-control" name="customers" id="customers"
+            ng-options="customer.firstName for customer in demoController.customers track by customer.id"
+            ng-model="demoController.customersSelected">
+        </select>
+    </div>
+    <button type="submit" class="btn btn-default" ng-disabled="myForm.userId.$invalid"
+        ng-click="demoController.submit(checkboxModel)">Submit</button>
+</form>
