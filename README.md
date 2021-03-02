@@ -15,3 +15,4 @@ npm install
 - [AngularJS Docs](https://docs.angularjs.org/api)
 - [ngTable](http://esvit.github.io/ng-table/#/)
 - [Bootstrap 3.3](https://getbootstrap.com/docs/3.3/)
+- [JavaScript reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)
