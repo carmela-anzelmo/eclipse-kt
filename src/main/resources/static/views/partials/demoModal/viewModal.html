@@ -1,0 +1,15 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Demo Modal</h3>
+</div>
+<div class="modal-body" id="modal-body">
+        <ul>
+        <li ng-repeat="customer in modal.customers">
+           {{ customer.firstName }} {{ customer.lastName }}
+        </li>
+    </ul>
+    <p>Checkbox is <strong>{{modal.isCheckboxSelected}}</strong></p>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="modal.ok()">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="modal.cancel()">Cancel</button>
+</div>
